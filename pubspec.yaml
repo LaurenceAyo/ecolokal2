@@ -1,0 +1,63 @@
+name: ecolokal2
+description: "2nd version of ecolokal"
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+# ---------- UTILITY PACKAGES ------------#
+http: ^1.1.0
+intl: ^0.18.1
+logger: ^2.0.1
+url_launcher: ^6.1.12
+
+  # ---------- STATE MANAGEMENT ------------#
+get: ^4.6.5
+get_storage: ^2.1.1
+
+  #------ ICONS --------#
+cupertino_icons: ^1.0.8
+
+  # ------ PACKAGE END -----------------#
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+
+  flutter_lints: ^5.0.0
+
+
+flutter:
+
+
+  uses-material-design: true
+
+  # -------------- LOCAL ASSETS ------------#
+  assets:
+    - assets/logos/
+    - assets/images/
+    - assets/icons/
+
+  # -------------- LOCAL FONTS --------------#
+fonts:
+     family: Poppins
+     fonts:
+       - asset: assets/fonts/Poppins-Medium.ttf
+       - weight: 400
+       - asset: assets/fonts/Poppins-Black.ttf
+       - weight: 500
+       - asset: assets/fonts/Poppins-Bold.ttf
+       - weight: 300
+       - asset: assets/fonts/Poppins-Italic.ttf
+       - weight: 200
+       - style: italic
