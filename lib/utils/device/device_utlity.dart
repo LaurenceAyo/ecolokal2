@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-//import 'package:url_launcher/url_launcher.dart';
+import 'dart:io'; // Required for InternetAddress, Platform, and SocketException
 
 class DeviceUtils {
   DeviceUtils._(); // Private constructor to prevent instantiation
 
+  static bool isIOS() {
+    return Platform.isIOS;
+  }
+  static bool isAndroid() {
+    return Platform.isAndroid;
+  }
   /// Hides the keyboard if it's open
   static void hideKeyboard(BuildContext context) {
     FocusScope.of(context).unfocus();
@@ -82,31 +88,13 @@ class DeviceUtils {
     return MediaQuery.of(context).padding.bottom;
   }
   /// Checks if device has internet connection
-  /*static bool hasInternetConnection() async {
+  static Future<bool> hasInternetConnection() async {
     try {
-      final result = await InternetAddress.lookup('example.com');
+      final result = await InternetAddress.lookup('google.com');
       return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
     } on SocketException catch (_) {
       return false;
     }
-    /// Checks if device is iOS
-    static bool isIOS() {
-      return Platform.isIOS;
-    }
-
-    /// Checks if device is Android
-    static bool isAndroid() {
-      return Platform.isAndroid;
-    }
-
-    /// Launches a URL in browser/app
-    static Future<void> launchUrl(String url) async {
-      if (await canLaunchUrlString(url)) {
-        await launchUrlString(url);
-      } else {
-        throw 'Could not launch $url';
-      }
-    }
   }
-*/
+
 }
