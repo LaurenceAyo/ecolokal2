@@ -1,21 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:ecolokal2/utils/helpers/helper_functions.dart';
 import 'package:ecolokal2/utils/constants/image_strings.dart';
 import 'package:ecolokal2/utils/constants/text_strings.dart';
+import 'package:ecolokal2/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
+import 'package:ecolokal2/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
+import 'package:ecolokal2/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
+import 'package:ecolokal2/features/authentication/screens/onboarding/widgets/onboarding_controller.dart';
+import 'package:ecolokal2/features/authentication/screens/onboarding/widgets/onboarding_next_button.dart';
 import 'package:ecolokal2/utils/constants/sizes.dart';
 import 'package:ecolokal2/utils/device/device_utlity.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:ecolokal2/utils/helpers/helper_functions.dart';
+import 'package:ecolokal2/utils/constants/colors.dart';
+import 'package:get/get.dart';
 
-class OnBoardingScreen extends StatelessWidget {
+class OnBoardingScreen extends StatefulWidget {  // Must be StatefulWidget
   const OnBoardingScreen({super.key});
 
   @override
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
+}
+
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  final PageController _pageController = PageController();  // Non-const controller
+  final controller = Get.put(OnBoardingController());
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final controller = Get.put(OnBoardingController());
+
     return Scaffold(
       body: Stack(
         children: [
-          // Horizontal Scrollable Pages
           PageView(
-            children: [
+            controller: controller.pageController,
+            onPageChanged: controller.updatePageIndicator,
+            children: const [
+              /// Horizontal Scrollable Pages
+
               OnBoardingPage(
                 image: TImages.onBoardingImage1,
                 title: TTexts.onBoardingTitle1,
@@ -25,85 +52,31 @@ class OnBoardingScreen extends StatelessWidget {
                 image: TImages.onBoardingImage2,
                 title: TTexts.onBoardingTitle2,
                 subtitle: TTexts.onBoardingSubTitle2,
+                backgroundColor: Color(0xFFf5f2ee),
               ),
               OnBoardingPage(
                 image: TImages.onBoardingImage3,
                 title: TTexts.onBoardingTitle3,
                 subtitle: TTexts.onBoardingSubTitle3,
+                backgroundColor: Color(0xFFf1e5d6),
               ),
             ],
           ),
 
-          ///  Skip Button
+          // Skip Button - can stay const
           const OnBoardingSkip(),
 
+          // Dot Navigation - remove const from instance only
+          OnBoardingDotNavigation(
+            controller: _pageController,
+            count: 3,
+          ),
 
-          /// Dot Navigation SmoothPageIndicator
-
-
-
-          /// Circular button
-
-
-
+          // Circular button
+          const OnBoardingNextButton()
         ],
       ),
     );
   }
 }
 
-class OnBoardingSkip extends StatelessWidget {
-  const OnBoardingSkip({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-        top: DeviceUtils.getAppBarHeight(),
-        right: TSizes.defaultSpace ,
-        child: TextButton(onPressed: () {}, child: Text('Skip')
-        ),
-    );
-  }
-}
-
-class OnBoardingPage extends StatelessWidget {
-  const OnBoardingPage({
-    super.key,
-    required this.image,
-    required this.title,
-    required this.subtitle,
-  });
-
-  final String image, title, subtitle;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(TSizes.defaultSpace),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image(
-            width: THelperFunctions.screenWidth() * 0.8,
-            height: THelperFunctions.screenHeight() * 0.6,
-            image: AssetImage(image),
-          ),
-          const SizedBox(height: TSizes.spaceBtwItems),
-          Text(
-            title,
-            style: Theme.of(context).textTheme.headlineMedium,
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: TSizes.spaceBtwItems),
-          Text(
-            subtitle,
-            style: Theme.of(context).textTheme.bodyMedium,
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
-    );
-  }
-}

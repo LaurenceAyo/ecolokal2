@@ -2,13 +2,14 @@
 class TImages {
 
   //-- App Logos
-  static const String darkAppLogo = 'assets/images/logo.png';
-  static const String lightAppLogo = 'assets/images/logo.png';
+  static const String darkAppLogo = 'assets/logos/EcoLokal.png';
+  static const String lightAppLogo = 'assets/logos/EcoLokal.png';
 
 
   //-- Social Logos
-static const String facebookLogo = 'assets/images/facebook.png';
-static const String instagramLogo = 'assets/images/instagram.png';
+static const String facebookLogo = 'assets/icons/facebook.png';
+static const String instagramLogo = 'assets/icons/instagram.png';
+static const String googleLogo = 'assets/icons/google-logo.png';
 
   //-- OnBoarding Images
 static const String onBoardingImage1 = 'assets/images/on_boarding_images/shop-local.png';
