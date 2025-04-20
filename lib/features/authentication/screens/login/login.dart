@@ -35,7 +35,6 @@ class LoginScreen extends StatelessWidget {
 
               // Divider (can stay const if it doesn't need runtime values)
               const TFormDivider(dividerText: TTexts.orSignInWith),
-              const SizedBox(height: 24),
 
               // Social Buttons (can stay const if they don't need runtime values)
               const TSocialButtons(),

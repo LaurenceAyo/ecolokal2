@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ecolokal2/utils/constants/text_strings.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ecolokal2/utils/constants/sizes.dart';
+import 'package:get/get.dart';
+import 'package:ecolokal2/features/authentication/screens/signup/widgets/signup.dart';
 
 class TForm extends StatelessWidget {
   const TForm({
@@ -57,7 +59,7 @@ class TForm extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: TSizes.spaceBtwSections),
+            const SizedBox(height: TSizes.spaceBtwInputFields),
 
             /// Sign In Button
             SizedBox(
@@ -72,16 +74,15 @@ class TForm extends StatelessWidget {
                 child: const Text(TTexts.signIn),
               ),
             ),
-            const SizedBox(height: TSizes.spaceBtwItems),
 
             /// Create Account Button
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
-                onPressed: () {},
-                child: const Text(TTexts.createAccount),
+                onPressed: () => Get.to(() => const SignupScreen()) , child: const Text(TTexts.createAccount),
               ),
             ),
+            const SizedBox(height: TSizes.spaceBtwInputFields),
           ],
         ),
       ),

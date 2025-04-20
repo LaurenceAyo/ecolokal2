@@ -1,13 +1,16 @@
 flutter_native_splash:
   color: "#FFFFFF"
   color_dark: "#272727"
-  image: assets/logos/eco-lokal-logo-1.png
-  image_dark: assets/logos/eco-lokal-logo-1.png
+  image: assets/logos/EcoLokal.png
+  image_dark: assets/logos/EcoLokal.png
 
   android_12:
     color: "#FFFFFF"
     color_dark: "#272727"
-    image: assets/logos/eco-lokal-logo-1.png
-    image_dark: assets/logos/eco-lokal-logo-1.png
+    image: assets/logos/EcoLokal.png
+    image_dark: assets/logos/EcoLokal.png
 
   web: false
+
+  # flutter pub run flutter_native_splash:create --path=splash.yaml
+  #flutter pub run flutter_native_splash:remove

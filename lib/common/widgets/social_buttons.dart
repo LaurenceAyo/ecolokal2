@@ -10,42 +10,47 @@ class TSocialButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Column(
       children: [
-        // Facebook Button
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            decoration: BoxDecoration(
-              border: Border.all(color: TColors.grey),
-              borderRadius: BorderRadius.circular(12),
+        const SizedBox(height: 20), // Add space above the buttons
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Facebook Button
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                decoration: BoxDecoration(
+                  border: Border.all(color: TColors.grey),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Image(
+                  width: 24,
+                  height: 24,
+                  image: AssetImage(TImages.facebookLogo),
+                ),
+              ),
             ),
-            child: const Image(
-              width: 24, // Use the same for both
-              height: 24,
-              image: AssetImage(TImages.facebookLogo),
-            ),
-          ),
-        ),
-        const SizedBox(width: TSizes.spaceBtwItems),
+            const SizedBox(width: TSizes.spaceBtwItems),
 
-        // Google Button
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            decoration: BoxDecoration(
-              border: Border.all(color: TColors.grey),
-              borderRadius: BorderRadius.circular(12),
+            // Google Button
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                decoration: BoxDecoration(
+                  border: Border.all(color: TColors.grey),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Image(
+                  width: 24,
+                  height: 24,
+                  image: AssetImage(TImages.googleLogo),
+                ),
+              ),
             ),
-            child: const Image(
-              width: 24,
-              height: 24,
-              image: AssetImage(TImages.googleLogo),
-            ),
-          ),
+          ],
         ),
       ],
     );
