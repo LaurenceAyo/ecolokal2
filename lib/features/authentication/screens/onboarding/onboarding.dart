@@ -6,11 +6,6 @@ import 'package:ecolokal2/features/authentication/screens/onboarding/widgets/onb
 import 'package:ecolokal2/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
 import 'package:ecolokal2/features/authentication/screens/onboarding/widgets/onboarding_controller.dart';
 import 'package:ecolokal2/features/authentication/screens/onboarding/widgets/onboarding_next_button.dart';
-import 'package:ecolokal2/utils/constants/sizes.dart';
-import 'package:ecolokal2/utils/device/device_utlity.dart';
-import 'package:iconsax/iconsax.dart';
-import 'package:ecolokal2/utils/helpers/helper_functions.dart';
-import 'package:ecolokal2/utils/constants/colors.dart';
 import 'package:get/get.dart';
 
 class OnBoardingScreen extends StatefulWidget {  // Must be StatefulWidget

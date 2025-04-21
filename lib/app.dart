@@ -13,7 +13,6 @@ class App extends StatelessWidget{
       title: 'ECOLOKAL',
       themeMode: ThemeMode.system,
       theme: GAppTheme.lightTheme,
-      darkTheme: GAppTheme.darkTheme,
       home: OnBoardingScreen(),
     );
   }

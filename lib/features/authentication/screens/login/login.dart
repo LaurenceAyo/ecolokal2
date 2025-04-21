@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:ecolokal2/common/styles/spacing_styles.dart';
 import 'package:ecolokal2/utils/helpers/helper_functions.dart';
 import 'package:ecolokal2/utils/constants/text_strings.dart';
-import 'package:ecolokal2/common/widgets/login_header.dart';
-import 'package:ecolokal2/common/widgets/login_form.dart';
-import 'package:ecolokal2/common/widgets/form_divider.dart';
-import 'package:ecolokal2/common/widgets/social_buttons.dart';
+import 'package:ecolokal2/common/widgets/login_signup/login_form.dart';
+import 'package:ecolokal2/common/widgets/login_signup/form_divider.dart';
+import 'package:ecolokal2/common/widgets/login_signup/social_buttons.dart';
+
+import '../../../../common/widgets/login_signup/login_header.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

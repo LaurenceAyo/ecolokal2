@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:ecolokal2/utils/theme/theme.dart';
-
 import 'app.dart';
 
 void main() {
-
-  runApp(const App());
+  runApp(
+    MaterialApp(
+      themeMode: ThemeMode.light, // Forces light mode
+      home: const App(), // Your root widget
+    ),
+  );
 }
+
 
 
